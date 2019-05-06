@@ -4,6 +4,24 @@ import {
   ScrollView,
 } from 'react-native';
 import CommentBlock from '../components/CommentBlock';
+import { mainColor,subColor } from '../styles/CommonStyles';
+
+const styles = {
+  descriptionText: {
+    color: 'pink',
+  },
+  paddingBlock: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 5,
+    padding: 10,
+    marginVertical: 5,
+  },
+  background: {
+    backgroundColor: subColor,
+    padding: 10,
+  },
+  container: { flex: 1},
+}
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -62,8 +80,8 @@ export default class HomeScreen extends React.Component {
   render() {
     const { state } = this;
     return (
-      <SafeAreaView>
-        <ScrollView style={{ padding: 10 }}>
+      <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.background} contentContainerStyle={styles.paddingBlock}>
           {state.csCourses.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
         </ScrollView>
       </SafeAreaView>
