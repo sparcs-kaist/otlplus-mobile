@@ -4,6 +4,32 @@ import {
   ScrollView,
 } from 'react-native';
 import CourseBlock from '../components/CourseBlock';
+import { mainColor,subColor } from '../styles/CommonStyles';
+
+
+const styles = {
+  descriptionText: {
+    color: 'pink',
+  },
+
+  paddingBlock: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 5,
+    padding: 10,
+    marginVertical: 5,
+  },
+
+  background: {
+    backgroundColor: subColor,
+    padding: 10,
+  },
+
+  container: { flex: 1},
+  
+}
+
+
+// ~~로 localStyle 만들기
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -25,8 +51,8 @@ export default class HomeScreen extends React.Component {
   render() {
     const { state } = this;
     return (
-      <SafeAreaView>
-        <ScrollView style={{ padding: 10 }}>
+      <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.background} contentContainerStyle={styles.paddingBlock}>
           {state.csCourses.map(e => <CourseBlock key={e.name} course={e} onPress={() => this._handleComponentTouch(e)} />)}
         </ScrollView>
       </SafeAreaView>
