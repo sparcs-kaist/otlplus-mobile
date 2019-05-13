@@ -7,6 +7,7 @@ import {
 import ReviewWriteBlock from '../components/ReviewWriteBlock';
 import CommentBlock from '../components/CommentBlock';
 import AcademicScheduleSection from '../components/AcademicScheduleSection';
+import RelatedCourseSection from '../components/RelatedCourseSection';
 import { mainColor, subColor } from '../styles/CommonStyles';
 
 const styles = {
@@ -82,6 +83,9 @@ export default class HomeScreen extends React.Component {
           </View>
           <View style={styles.paddingBlock}>
             {state.comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+          </View>
+          <View style={styles.paddingBlock}>
+            <RelatedCourseSection />
           </View>
         </ScrollView>
       </SafeAreaView>
