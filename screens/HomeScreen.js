@@ -35,6 +35,16 @@ export default class HomeScreen extends React.Component {
   };
 
   state = {
+    courseToReview: {
+      course: {
+        title: '전산학 프로젝트',
+      },
+      lecture: {
+        professor: '이준상',
+        year: 2016,
+        semester: 0,
+      },
+    },
     comments: [
       {
         id: 1,
@@ -68,16 +78,16 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const { state } = this;
+    const { courseToReview, comments } = this.state;
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.background}>
           <View style={styles.mainPhoto} />
           <View style={styles.paddingBlock}>
-            <ReviewWriteBlock />
+            <ReviewWriteBlock {...courseToReview} />
           </View>
           <View style={styles.paddingBlock}>
-            {state.comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+            {comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
           </View>
         </ScrollView>
       </SafeAreaView>
