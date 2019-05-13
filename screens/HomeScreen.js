@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import ReviewWriteBlock from '../components/ReviewWriteBlock';
 import CommentBlock from '../components/CommentBlock';
+import CourseBlock from '../components/CourseBlock';
 import { mainColor, subColor } from '../styles/CommonStyles';
 
 const styles = {
@@ -35,6 +36,32 @@ export default class HomeScreen extends React.Component {
   };
 
   state = {
+    courses: [
+      {
+        id: 1,
+        title: '전산학프로젝트',
+        department: '전산학부',
+        old_code: 'CS3XX',
+        grade_letter: 'B',
+        load_letter: 'F',
+        speech_letter: 'F',
+        type: '전공선택',
+        professors: '뫄뫄뫄,솨솨솨',
+        summary: '과목요약',
+      },
+      {
+        id: 2,
+        title: '알고리즘설계와해석',
+        department: '전산학부',
+        old_code: 'CS3YY',
+        grade_letter: 'A',
+        load_letter: 'A',
+        speech_letter: 'D',
+        type: '전공선택',
+        professors: '뫄뫄뫄,솨솨솨',
+        summary: '과목요약',
+      },
+    ],
     comments: [
       {
         id: 1,
@@ -78,6 +105,7 @@ export default class HomeScreen extends React.Component {
           </View>
           <View style={styles.paddingBlock}>
             {state.comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+            {state.courses.map(e => <CourseBlock key={e.id} course={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
           </View>
         </ScrollView>
       </SafeAreaView>
