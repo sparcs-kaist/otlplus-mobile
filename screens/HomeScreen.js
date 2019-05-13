@@ -2,11 +2,16 @@ import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
+  View,
 } from 'react-native';
 import CommentBlock from '../components/CommentBlock';
 import { mainColor,subColor } from '../styles/CommonStyles';
 
 const styles = {
+  mainPhoto: {
+    height: 300,
+    backgroundColor: 'gray',
+  },
   descriptionText: {
     color: 'pink',
   },
@@ -14,11 +19,11 @@ const styles = {
     backgroundColor: '#FFFFFF',
     borderRadius: 5,
     padding: 10,
+    marginHorizontal: 10,
     marginVertical: 5,
   },
   background: {
     backgroundColor: subColor,
-    padding: 10,
   },
   container: { flex: 1},
 }
@@ -81,8 +86,11 @@ export default class HomeScreen extends React.Component {
     const { state } = this;
     return (
       <SafeAreaView style={styles.container}>
-        <ScrollView style={styles.background} contentContainerStyle={styles.paddingBlock}>
-          {state.csCourses.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+        <ScrollView style={styles.background}>
+          <View style={styles.mainPhoto} />
+          <View style={styles.paddingBlock}>
+            {state.csCourses.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+          </View>
         </ScrollView>
       </SafeAreaView>
     );
