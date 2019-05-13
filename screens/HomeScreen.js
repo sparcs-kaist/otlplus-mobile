@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import ReviewWriteBlock from '../components/ReviewWriteBlock';
 import CommentBlock from '../components/CommentBlock';
+import AcademicScheduleSection from '../components/AcademicScheduleSection';
 import { mainColor, subColor } from '../styles/CommonStyles';
 
 const styles = {
@@ -73,6 +74,9 @@ export default class HomeScreen extends React.Component {
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.background}>
           <View style={styles.mainPhoto} />
+          <View style={styles.paddingBlock}>
+            <AcademicScheduleSection />
+          </View>
           <View style={styles.paddingBlock}>
             <ReviewWriteBlock />
           </View>
