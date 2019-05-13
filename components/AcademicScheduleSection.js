@@ -15,8 +15,10 @@ const styles = {
     fontSize: 20,
   },
   date: {
-    fontSize: 12,
     flexDirection: 'row',
+    margin: 2,
+
+    fontSize: 12,
   },
   mainColorText: [
     CommonStyles.text,
@@ -25,7 +27,8 @@ const styles = {
   bold: {
     fontWeight: 'bold',
   },
-  alignRight: {
+  mainColorTextWrapper: {
+    marginTop: 5,
     flexDirection: 'row',
     justifyContent: 'flex-end',
   },
@@ -40,7 +43,7 @@ const AcademicScheduleSection = () => (
         <Text>2018.1.3</Text>
       </View>
     </View>
-    <MildTouchable style={styles.alignRight} onPress={() => {}}>
+    <MildTouchable style={styles.mainColorTextWrapper} onPress={() => {}}>
       <Text style={styles.mainColorText}>학사시스템 바로가기</Text>
     </MildTouchable>
   </View>
