@@ -4,8 +4,9 @@ import {
   ScrollView,
   View,
 } from 'react-native';
+import ReviewWriteBlock from '../components/ReviewWriteBlock';
 import CommentBlock from '../components/CommentBlock';
-import { mainColor,subColor } from '../styles/CommonStyles';
+import { mainColor, subColor } from '../styles/CommonStyles';
 
 const styles = {
   mainPhoto: {
@@ -25,32 +26,16 @@ const styles = {
   background: {
     backgroundColor: subColor,
   },
-  container: { flex: 1},
-}
+  container: { flex: 1 },
+};
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
-  /*
-  comment: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    professor: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired,
-    semester: PropTypes.number.isRequired,
-    comment: PropTypes.string.isRequired,
-    like: PropTypes.number.isRequired,
-    grade: PropTypes.string.isRequired,
-    load: PropTypes.string.isRequired,
-    speech: PropTypes.string.isRequired,
-  }).isRequired,
-  onPress: PropTypes.func.isRequired,
-  onReportPress: PropTypes.func.isRequired,
-  onLikePress: PropTypes.func.isRequired,
-  */
   state = {
-    csCourses: [
+    comments: [
       {
         id: 1,
         name: '전산학 프로젝트',
@@ -89,7 +74,10 @@ export default class HomeScreen extends React.Component {
         <ScrollView style={styles.background}>
           <View style={styles.mainPhoto} />
           <View style={styles.paddingBlock}>
-            {state.csCourses.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+            <ReviewWriteBlock />
+          </View>
+          <View style={styles.paddingBlock}>
+            {state.comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
           </View>
         </ScrollView>
       </SafeAreaView>
