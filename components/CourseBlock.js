@@ -53,7 +53,7 @@ const CourseBlock = ({ course, onPress }) => (
       <Text style={styles.tagTextBold}>교수</Text>
       <Text style={styles.tagText}>{course.professors}</Text>
     </View>
-    <View style={[styles.rowContainer, { marginBottom: 8 }]}>
+    <View style={[styles.rowContainer, { marginBottom: 8 }, { flex: 1 }]}>
       <Text style={styles.tagTextBold}>설명</Text>
       <Text style={styles.tagText}>{course.summary}</Text>
     </View>
