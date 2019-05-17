@@ -9,8 +9,15 @@ import MildTouchable from './MildTouchable';
 import { blockColor } from '../styles/CommonStyles';
 
 const styles = {
-  rowContainer: { flexDirection: 'row', marginVertical: 5 },
-  tagText: { fontWeight: 'bold', marginRight: 20 },
+  rowContainer: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' },
+  tagTextBold: { fontWeight: 'bold', marginRight: 5 },
+  tagText: { marginRight: 5 },
+  RectangleShapeView: {
+    backgroundColor: 'lightgray',
+    borderRadius: 5,
+    padding: 1,
+    marginVertical: 8,
+  },
 };
 
 const CourseBlock = ({ course, onPress }) => (
@@ -23,22 +30,32 @@ const CourseBlock = ({ course, onPress }) => (
       marginVertical: 5,
     }}
   >
-    <View style={[styles.rowContainer, { marginBottom: 5 }]}>
-      <Text style={styles.tagTextBold}>{course.title}</Text>
-      <Text style={styles.tagText}>{course.old_code}</Text>
-      <Text style={styles.tagText}>{course.grade_letter}</Text>
-      <Text style={styles.tagText}>{course.load_letter}</Text>
-      <Text style={styles.tagText}>{course.speech_letter}</Text>
-    </View>
     <View style={[styles.rowContainer, { justifyContent: 'space-between' }]}>
       <View style={styles.rowContainer}>
-        <Text style={styles.tagText}>분류</Text>
-        <Text style={styles.tagTextBold}>{`${course.department}, ${course.type}`}</Text>
-        <Text style={styles.tagText}>교수</Text>
-        <Text style={styles.tagTextBold}>{course.professors}</Text>
-        <Text style={styles.tagText}>설명</Text>
-        <Text style={styles.tagTextBold}>{course.summary}</Text>
+        <Text style={styles.tagTextBold}>{course.title}</Text>
+        <Text style={styles.tagText}>{course.old_code}</Text>
       </View>
+      <View style={styles.rowContainer}>
+        <Text style={styles.tagText}>성적</Text>
+        <Text style={styles.tagTextBold}>{course.grade_letter}</Text>
+        <Text style={styles.tagText}>로드</Text>
+        <Text style={styles.tagTextBold}>{course.load_letter}</Text>
+        <Text style={styles.tagText}>강의</Text>
+        <Text style={styles.tagTextBold}>{course.speech_letter}</Text>
+      </View>
+    </View>
+    <View style={styles.RectangleShapeView} />
+    <View style={[styles.rowContainer, { marginBottom: 8 }]}>
+      <Text style={styles.tagTextBold}>분류</Text>
+      <Text style={styles.tagText}>{`${course.department}, ${course.type}`}</Text>
+    </View>
+    <View style={[styles.rowContainer, { marginBottom: 8 }]}>
+      <Text style={styles.tagTextBold}>교수</Text>
+      <Text style={styles.tagText}>{course.professors}</Text>
+    </View>
+    <View style={[styles.rowContainer, { marginBottom: 8 }]}>
+      <Text style={styles.tagTextBold}>설명</Text>
+      <Text style={styles.tagText}>{course.summary}</Text>
     </View>
   </TouchableOpacity>
 );

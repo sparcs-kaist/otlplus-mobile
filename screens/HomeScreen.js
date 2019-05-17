@@ -47,7 +47,7 @@ export default class HomeScreen extends React.Component {
         speech_letter: 'F',
         type: '전공선택',
         professors: '뫄뫄뫄,솨솨솨',
-        summary: '과목요약',
+        summary: '과목요약~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
       },
       {
         id: 2,
@@ -59,7 +59,7 @@ export default class HomeScreen extends React.Component {
         speech_letter: 'D',
         type: '전공선택',
         professors: '뫄뫄뫄,솨솨솨',
-        summary: '과목요약',
+        summary: '과목요약~~~~~~~~~~~~~~~~~~~~~~~~~',
       },
     ],
     comments: [
