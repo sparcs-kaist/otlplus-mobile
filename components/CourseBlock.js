@@ -16,7 +16,7 @@ const styles = {
     backgroundColor: 'lightgray',
     borderRadius: 5,
     padding: 1,
-    marginVertical: 8,
+    marginVertical: 5,
   },
 };
 
@@ -45,17 +45,17 @@ const CourseBlock = ({ course, onPress }) => (
       </View>
     </View>
     <View style={styles.RectangleShapeView} />
-    <View style={[styles.rowContainer, { marginBottom: 8 }]}>
+    <View style={[styles.rowContainer, { marginBottom: 5 }]}>
       <Text style={styles.tagTextBold}>분류</Text>
       <Text style={styles.tagText}>{`${course.department}, ${course.type}`}</Text>
     </View>
-    <View style={[styles.rowContainer, { marginBottom: 8 }]}>
+    <View style={[styles.rowContainer, { marginBottom: 5 }]}>
       <Text style={styles.tagTextBold}>교수</Text>
       <Text style={styles.tagText}>{course.professors}</Text>
     </View>
-    <View style={[styles.rowContainer, { marginBottom: 8 }, { flex: 1 }]}>
+    <View style={[styles.rowContainer, { marginBottom: 5 }, { alignItems: null }]}>
       <Text style={styles.tagTextBold}>설명</Text>
-      <Text style={styles.tagText}>{course.summary}</Text>
+      <Text style={[styles.tagText, { flex: 1 }]}>{course.summary}</Text>
     </View>
   </TouchableOpacity>
 );
