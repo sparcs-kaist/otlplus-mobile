@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   Text,
   View,
@@ -12,18 +12,10 @@ const styles = {
   },
 };
 
-export default class ReviewWriteBlock extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+const ReviewWriteBlock = () => (
+  <View style={styles.paddingBox}>
+    <Text style={CommonStyles.boldText}></Text>
+  </View>
+);
 
-  render() {
-    return (
-      <View style={styles.paddingBox}>
-        <Text style={CommonStyles.boldText}></Text>
-      </View>
-    );
-  }
-}
+export default ReviewWriteBlock;

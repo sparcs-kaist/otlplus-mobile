@@ -8,7 +8,6 @@ import CommonStyles, { mainColor } from '../styles/CommonStyles';
 
 const styles = {
   dueWrapper: {
-    flexDirection: 'column',
     alignItems: 'center',
   },
   timer: {

@@ -8,7 +8,7 @@ import ReviewWriteBlock from '../components/ReviewWriteBlock';
 import CommentBlock from '../components/CommentBlock';
 import AcademicScheduleSection from '../components/AcademicScheduleSection';
 import RelatedCourseSection from '../components/RelatedCourseSection';
-import { mainColor, subColor } from '../styles/CommonStyles';
+import CommonStyles, { mainColor, subColor } from '../styles/CommonStyles';
 
 const styles = {
   mainPhoto: {
@@ -28,7 +28,9 @@ const styles = {
   background: {
     backgroundColor: subColor,
   },
-  container: { flex: 1 },
+  container: [
+    CommonStyles.container,
+  ],
 };
 
 export default class HomeScreen extends React.Component {
