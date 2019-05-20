@@ -14,8 +14,8 @@ const styles = {
   tagText: { marginRight: 5 },
   RectangleShapeView: {
     backgroundColor: 'lightgray',
-    borderRadius: 5,
-    padding: 1,
+    borderRadius: 0.5,
+    height: 1,
     marginVertical: 5,
   },
 };
