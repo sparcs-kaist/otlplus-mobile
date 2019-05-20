@@ -28,9 +28,6 @@ const styles = {
   background: {
     backgroundColor: subColor,
   },
-  container: [
-    CommonStyles.container,
-  ],
 };
 
 export default class HomeScreen extends React.Component {
@@ -74,7 +71,7 @@ export default class HomeScreen extends React.Component {
   render() {
     const { state } = this;
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={CommonStyles.container}>
         <ScrollView style={styles.background}>
           <View style={styles.mainPhoto} />
           <View style={styles.paddingBlock}>

@@ -6,7 +6,7 @@ __generated__
 .DS_Store
 
 # Webstorm
-.idea
+.idea/*
 
 # Node
 node_modules
