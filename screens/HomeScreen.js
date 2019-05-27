@@ -7,7 +7,9 @@ import {
 import ReviewWriteBlock from '../components/ReviewWriteBlock';
 import CommentBlock from '../components/CommentBlock';
 import CourseBlock from '../components/CourseBlock';
-import { mainColor, subColor } from '../styles/CommonStyles';
+import AcademicScheduleSection from '../components/AcademicScheduleSection';
+import RelatedCourseSection from '../components/RelatedCourseSection';
+import CommonStyles, { mainColor, subColor } from '../styles/CommonStyles';
 
 const styles = {
   mainPhoto: {
@@ -27,7 +29,6 @@ const styles = {
   background: {
     backgroundColor: subColor,
   },
-  container: { flex: 1 },
 };
 
 export default class HomeScreen extends React.Component {
@@ -97,15 +98,21 @@ export default class HomeScreen extends React.Component {
   render() {
     const { state } = this;
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={CommonStyles.container}>
         <ScrollView style={styles.background}>
           <View style={styles.mainPhoto} />
+          <View style={styles.paddingBlock}>
+            <AcademicScheduleSection />
+          </View>
           <View style={styles.paddingBlock}>
             <ReviewWriteBlock />
           </View>
           <View style={styles.paddingBlock}>
             {state.comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
             {state.courses.map(e => <CourseBlock key={e.id} course={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+          </View>
+          <View style={styles.paddingBlock}>
+            <RelatedCourseSection />
           </View>
         </ScrollView>
       </SafeAreaView>
