@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import MildTouchable from './MildTouchable';
+import { blockColor } from '../styles/CommonStyles';
 
 const styles = {
   rowContainer: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' },
@@ -22,7 +23,7 @@ const CommentBlock = ({ comment, onPress, onLikePress, onReportPress }) => (
   <MildTouchable
     onPress={onPress}
     style={{
-      backgroundColor: '#EEEEEE',
+      backgroundColor: blockColor,
       borderRadius: 5,
       padding: 10,
       marginVertical: 5,
