@@ -2,7 +2,6 @@ import React from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import MildTouchable from './MildTouchable';
@@ -21,7 +20,7 @@ const styles = {
 };
 
 const CourseBlock = ({ course, onPress }) => (
-  <TouchableOpacity
+  <MildTouchable
     onPress={onPress}
     style={{
       backgroundColor: blockColor,
@@ -57,7 +56,7 @@ const CourseBlock = ({ course, onPress }) => (
       <Text style={styles.tagTextBold}>설명</Text>
       <Text style={[styles.tagText, { flex: 1 }]}>{course.summary}</Text>
     </View>
-  </TouchableOpacity>
+  </MildTouchable>
 );
 
 CourseBlock.propTypes = {

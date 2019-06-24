@@ -4,12 +4,10 @@ import {
   ScrollView,
   View,
 } from 'react-native';
-import ReviewWriteBlock from '../components/ReviewWriteBlock';
 import CommentBlock from '../components/CommentBlock';
 import CourseBlock from '../components/CourseBlock';
 import AcademicScheduleSection from '../components/AcademicScheduleSection';
-import RelatedCourseSection from '../components/RelatedCourseSection';
-import CommonStyles, { mainColor, subColor } from '../styles/CommonStyles';
+import CommonStyles, { subColor } from '../styles/CommonStyles';
 
 const styles = {
   mainPhoto: {
@@ -96,7 +94,7 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const { courseToReview, comments } = this.state;
+    const { courses, comments } = this.state;
     return (
       <SafeAreaView style={CommonStyles.container}>
         <ScrollView style={styles.background}>
@@ -105,14 +103,8 @@ export default class HomeScreen extends React.Component {
             <AcademicScheduleSection />
           </View>
           <View style={styles.paddingBlock}>
-            <ReviewWriteBlock />
-          </View>
-          <View style={styles.paddingBlock}>
-            {state.comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
-            {state.courses.map(e => <CourseBlock key={e.id} course={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
-          </View>
-          <View style={styles.paddingBlock}>
-            <RelatedCourseSection />
+            {comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+            {courses.map(e => <CourseBlock key={e.id} course={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
           </View>
         </ScrollView>
       </SafeAreaView>
