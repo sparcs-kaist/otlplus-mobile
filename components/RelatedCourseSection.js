@@ -39,6 +39,7 @@ const exampleCourse = {
   description: '알고리즘의 시간 및 공간 복잡도를 분석하고 효율적인 알고리즘을 설계하는 기본적인 기법을 습득하며 정렬, 탐색, 그래프 순방, 문자열 정합, 동적프로그래밍 및 함수와 배열계산을 통하여 이 기법을 익힌다. NP완전문제와 병렬 알고리즘의 기본 개념을 다룬다. (선수과목 : CS204, CS206)',
 };
 
+/* TODO insert proper values, no proptypes */
 const RelatedCourseSection = () => (
   <View>
     <View style={styles.relatedCourseTitleWrapper}>

@@ -37,5 +37,3 @@ export default class ReviewWriteBlock extends Component {
     );
   }
 }
-
-export default ReviewWriteBlock;
