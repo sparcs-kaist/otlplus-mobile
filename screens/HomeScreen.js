@@ -96,7 +96,7 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const { state } = this;
+    const { courseToReview, comments } = this.state;
     return (
       <SafeAreaView style={CommonStyles.container}>
         <ScrollView style={styles.background}>
