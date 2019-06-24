@@ -6,7 +6,10 @@ import {
 } from 'react-native';
 import ReviewWriteBlock from '../components/ReviewWriteBlock';
 import CommentBlock from '../components/CommentBlock';
-import { mainColor, subColor } from '../styles/CommonStyles';
+import CourseBlock from '../components/CourseBlock';
+import AcademicScheduleSection from '../components/AcademicScheduleSection';
+import RelatedCourseSection from '../components/RelatedCourseSection';
+import CommonStyles, { mainColor, subColor } from '../styles/CommonStyles';
 
 const styles = {
   mainPhoto: {
@@ -26,7 +29,6 @@ const styles = {
   background: {
     backgroundColor: subColor,
   },
-  container: { flex: 1 },
 };
 
 export default class HomeScreen extends React.Component {
@@ -35,16 +37,32 @@ export default class HomeScreen extends React.Component {
   };
 
   state = {
-    courseToReview: {
-      course: {
-        title: '전산학 프로젝트',
+    courses: [
+      {
+        id: 1,
+        title: '전산학프로젝트',
+        department: '전산학부',
+        old_code: 'CS3XX',
+        grade_letter: 'B',
+        load_letter: 'F',
+        speech_letter: 'F',
+        type: '전공선택',
+        professors: '뫄뫄뫄,솨솨솨',
+        summary: '과목요약~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~',
       },
-      lecture: {
-        professor: '이준상',
-        year: 2016,
-        semester: 0,
+      {
+        id: 2,
+        title: '알고리즘설계와해석',
+        department: '전산학부',
+        old_code: 'CS3YY',
+        grade_letter: 'A',
+        load_letter: 'A',
+        speech_letter: 'D',
+        type: '전공선택',
+        professors: '뫄뫄뫄,솨솨솨',
+        summary: '과목요약~~~~~~~~~~~~~~~~~~~~~~~~~',
       },
-    },
+    ],
     comments: [
       {
         id: 1,
@@ -80,14 +98,21 @@ export default class HomeScreen extends React.Component {
   render() {
     const { courseToReview, comments } = this.state;
     return (
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={CommonStyles.container}>
         <ScrollView style={styles.background}>
           <View style={styles.mainPhoto} />
           <View style={styles.paddingBlock}>
-            <ReviewWriteBlock {...courseToReview} />
+            <AcademicScheduleSection />
           </View>
           <View style={styles.paddingBlock}>
-            {comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+            <ReviewWriteBlock />
+          </View>
+          <View style={styles.paddingBlock}>
+            {state.comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+            {state.courses.map(e => <CourseBlock key={e.id} course={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
+          </View>
+          <View style={styles.paddingBlock}>
+            <RelatedCourseSection />
           </View>
         </ScrollView>
       </SafeAreaView>

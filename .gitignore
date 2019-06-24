@@ -5,6 +5,9 @@ __generated__
 # macOS
 .DS_Store
 
+# Webstorm
+.idea/*
+
 # Node
 node_modules
 npm-debug.*
@@ -21,4 +24,3 @@ yarn-error.*
 *.p12
 *.key
 *.mobileprovision
-
