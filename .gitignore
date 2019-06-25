@@ -1,5 +1,5 @@
 # Expo
-.expo
+.expo*
 __generated__
 
 # macOS
@@ -15,6 +15,9 @@ yarn-error.*
 .*.swo
 .*.swn
 .*.swm
+
+# Webstorm
+.idea
 
 # Others
 *.jks
