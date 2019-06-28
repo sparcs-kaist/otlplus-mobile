@@ -91,7 +91,7 @@ export default class HomeScreen extends React.Component {
     return (
       <SafeAreaView style={CommonStyles.container}>
         <ScrollView style={styles.background}>
-          <View style={styles.mainPhoto}></View>
+          <View style={styles.mainPhoto} />
           <View style={CommonStyles.paddingBlock}>
             <AcademicScheduleSection />
           </View>

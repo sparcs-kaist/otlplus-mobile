@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   SafeAreaView,
   View,
-  Text,
 } from 'react-native';
 import Timetable from '../components/Timetable';
 import SearchSubject from '../components/SearchSubject';
@@ -30,7 +29,15 @@ export default class TimetableScreen extends Component {
         <View style={CommonStyles.paddingBlock}>
           <Timetable fullTimetable={state.fullTimetable} />
         </View>
-        <SearchSubject fullTimetable={state.fullTimetable} />
+        <View>
+          {/* <View>
+            <SearchSubjectIcons />
+          </View> */}
+          <View style={CommonStyles.paddingBlock}>
+            <SearchSubject fullTimetable={state.fullTimetable} />
+          </View>
+        </View>
+
       </SafeAreaView>
     );
   }
