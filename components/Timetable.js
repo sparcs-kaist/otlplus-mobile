@@ -3,6 +3,7 @@ import {
   View,
   Text,
 } from 'react-native';
+import CommonStyles from '../styles/CommonStyles';
 
 const Timetable = () => (
   <View>

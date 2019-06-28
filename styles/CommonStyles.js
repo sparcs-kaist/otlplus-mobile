@@ -15,4 +15,11 @@ export default StyleSheet.create({
     fontSize: 13,
     fontWeight: 'bold',
   },
+  paddingBlock: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 5,
+    padding: 10,
+    marginHorizontal: 10,
+    marginVertical: 5,
+  },
 });

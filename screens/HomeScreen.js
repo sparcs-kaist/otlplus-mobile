@@ -17,13 +17,6 @@ const styles = {
   descriptionText: {
     color: 'pink',
   },
-  paddingBlock: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 5,
-    padding: 10,
-    marginHorizontal: 10,
-    marginVertical: 5,
-  },
   background: {
     backgroundColor: subColor,
   },
@@ -98,11 +91,11 @@ export default class HomeScreen extends React.Component {
     return (
       <SafeAreaView style={CommonStyles.container}>
         <ScrollView style={styles.background}>
-          <View style={styles.mainPhoto} />
-          <View style={styles.paddingBlock}>
+          <View style={styles.mainPhoto}></View>
+          <View style={CommonStyles.paddingBlock}>
             <AcademicScheduleSection />
           </View>
-          <View style={styles.paddingBlock}>
+          <View style={CommonStyles.paddingBlock}>
             {comments.map(e => <CommentBlock key={e.id} comment={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
             {courses.map(e => <CourseBlock key={e.id} course={e} onPress={() => this._handleComponentTouch(e)} onLikePress={() => {}} onReportPress={() => {}} />)}
           </View>
