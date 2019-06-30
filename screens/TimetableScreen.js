@@ -17,7 +17,7 @@ const styles = {
 
 export default class TimetableScreen extends Component {
   state = {
-    fullTimetable: false,
+    fullTimetable: true,
   };
 
   render() {

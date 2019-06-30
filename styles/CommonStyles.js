@@ -16,10 +16,13 @@ export default StyleSheet.create({
     fontWeight: 'bold',
   },
   paddingBlock: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 5,
-    padding: 10,
     marginHorizontal: 10,
     marginVertical: 5,
+    padding: 10,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 6,
+    borderBottomColor: '#e54c63',
+    borderBottomWidth: 3,
+    shadowOpacity: 0.3,
   },
 });

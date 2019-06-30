@@ -19,6 +19,7 @@
     "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-modalbox": "^1.7.1",
+    "react-native-pose": "^0.9.1",
     "react-navigation": "^3.11.0"
   },
   "devDependencies": {
