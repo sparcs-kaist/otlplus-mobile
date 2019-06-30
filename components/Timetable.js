@@ -10,13 +10,26 @@ import posed from 'react-native-pose';
 import CommonStyles from '../styles/CommonStyles';
 
 const styles = {
+  timetable: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
   timetableInfo: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  timetable: {
+  column: {
     flexDirection: 'column',
-    justifyContent: 'space-between',
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  classification: {
+    fontSize: 13,
+    fontWeight: 'bold',
+  },
+  credit: {
+    fontSize: 13,
   },
 };
 
@@ -44,39 +57,76 @@ const Timetable = (props) => {
           pose={expandedTimetable ? 'expanded' : 'shrinked'}
           style={styles.timetable}
         >
-          {/* change the css(timetable height) and content info(show or not) when this.fullTimetable is false */}
-          <Text>  월 화 수 목 금 </Text>
-          <Text>{expandedTimetable && <Text>fullTimetable</Text>}</Text>
-          {/* 월 화 수 목 금 */}
-          {/* 왼쪽 시간 bar */}
-          {/* 월 div */}
-          {/* 화 div */}
-          {/* 수 div */}
-          {/* 목 div */}
-          {/* 금 div */}
+          <View>
+            {/* 왼쪽 시간 bar */}
+            <Text>8</Text>
+          </View>
+          <View>
+            <Text>월요일</Text>
+          </View>
+          <View>
+            <Text>화요일</Text>
+          </View>
+          <View>
+            <Text>수요일</Text>
+          </View>
+          <View>
+            <Text>목요일</Text>
+          </View>
+          <View>
+            <Text>금요일</Text>
+          </View>
         </Box>
       </View>
       <View style={styles.timetableInfo}>
-        <View>
-          <Text>기필, 전필, 인문,</Text>
-          <Text>기선, 전선, 기타 </Text>
-          {/* 기필, 전필, 인문,
-              기선, 전선, 기타 */}
+        <View style={styles.column}>
+          <View style={styles.row}>
+            <Text style={styles.classification}>기필 </Text>
+            <Text style={styles.credit}>10 </Text>
+            <Text style={styles.classification}>전필 </Text>
+            <Text style={styles.credit}>3 </Text>
+            <Text style={styles.classification}>인문 </Text>
+            <Text style={styles.credit}>0</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.classification}>기선 </Text>
+            <Text style={styles.credit}>6 </Text>
+            <Text style={styles.classification}>전선 </Text>
+            <Text style={styles.credit}>0 </Text>
+            <Text style={styles.classification}>기타 </Text>
+            <Text style={styles.credit}>4 </Text>
+          </View>
+          {/* table 로 다시짜기 */}
         </View>
-        <View>
-          <Text>12학점, 2AU</Text>
-          {/* xx학점, xAU */}
+        <View style={styles.row}>
+          <View style={styles.column}>
+            <Text>12</Text>
+            <Text>학점</Text>
+          </View>
+          <View style={styles.column}>
+            <Text>2</Text>
+            <Text>AU</Text>
+          </View>
         </View>
-        <View>
-          <Text>A+ B0, A-</Text>
-          {/* 성적, 널널, 강의 */}
+        <View style={styles.row}>
+          <View style={styles.column}>
+            <Text>A-</Text>
+            <Text>성적</Text>
+          </View>
+          <View style={styles.column}>
+            <Text>B+</Text>
+            <Text>널널</Text>
+          </View>
+          <View style={styles.column}>
+            <Text>B</Text>
+            <Text>강의</Text>
+          </View>
         </View>
       </View>
       <View>
-        <Button
-          onPress={onArrowClick}
-          title={expandedTimetable ? 'Up' : 'Down'}
-        />
+        <Text onPress={onArrowClick}>
+          {expandedTimetable ? 'Up' : 'Down'}
+        </Text>
         {/* svg 로 바꿀 예정 */}
       </View>
     </View>
