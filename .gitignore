@@ -19,6 +19,9 @@ yarn-error.*
 .*.swn
 .*.swm
 
+# Webstorm
+.idea
+
 # Others
 *.jks
 *.p12

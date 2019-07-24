@@ -15,4 +15,15 @@ export default StyleSheet.create({
     fontSize: 13,
     fontWeight: 'bold',
   },
+  paddingBlock: {
+    marginHorizontal: 12,
+    marginVertical: 5,
+    padding: 10,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 6,
+    borderBottomColor: '#e54c63',
+    borderBottomWidth: 3,
+    shadowOpacity: 0.3,
+    // fontFamily: 'Apple SD Gothic Neo',
+  },
 });
